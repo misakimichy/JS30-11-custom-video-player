@@ -1,0 +1,105 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: "#f6f6f6";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    max-width: 750px;
+    border: 1px solid gray;
+    box-shadow: 0 0 20px gray;
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.player:fullscreen {
+    max-width: none;
+    width: 100%;
+}
+
+.player:-webkit-ful-screen {
+    max-width: 100%;
+    width: 100%;
+}
+
+.player-video {
+    width: 100%;
+}
+
+.player-button {
+    min-width: 80px;
+    margin-right: 10px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.player-button:focus {
+    border-color: gray;
+}
+
+.player-slider {
+    width: 10px;
+    height: 30px;
+}
+
+.player-controls {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(100%) translateY(-5px);
+    transition: all 300ms;
+}
+
+.player:hover, .player-controls {
+    transform: translateY(0)
+}
+
+.player:hover .progress {
+    height: 15px;
+}
+
+.progress {
+    height: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex: 10;
+    flex-basis: 100%;
+    position: relative;
+    transition: height 300ms;
+}
+
+.progress-filled {
+    width: 50%;
+    background: gray;
+    flex: 0;
+    flex-basis: 50%;
+}
+
+/*  styles for input */
+input[type=range] {
+    width: 100%;
+    margin: 0 5px;
+    background: transparent;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
