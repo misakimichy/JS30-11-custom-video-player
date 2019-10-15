@@ -20,12 +20,17 @@
         video.currentTime += parseFloat(e.currentTarget.dataset.skip);
     };
 
+    const handleSliders = (e) => {
+        video[e.currentTarget.name] = e.currentTarget.value;
+    };
+
+    // Event listeners
     video.addEventListener('click', togglePlay);
     video.addEventListener('play', updateButton);
     video.addEventListener('pause', updateButton);
 
     toggle.addEventListener('click', togglePlay);
-    skipButtons.forEach(skipButton =>
-        skipButton.addEventListener('click', skip)
-    );
+    skipButtons.forEach(skipButton => skipButton.addEventListener('click', skip));
+    ranges.forEach(range => range.addEventListener('change', handleSliders));
+    ranges.forEach(range => range.addEventListener('mousemove', handleSliders));
 }());
