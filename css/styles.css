@@ -30,8 +30,8 @@ body {
     width: 100%;
 }
 
-.player:-webkit-ful-screen {
-    max-width: 100%;
+.player:-webkit-full-screen {
+    max-width: none;
     width: 100%;
 }
 
@@ -62,13 +62,13 @@ body {
     position: absolute;
     bottom: 0;
     display: flex;
-    flex-wrap: wrap;
-    background: rgba(0, 0, 0, 0.1);
     transform: translateY(100%) translateY(-5px);
     transition: all 300ms;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.1);
 }
 
-.player:hover, .player-controls {
+.player:hover, .player-controls:hover {
     transform: translateY(0)
 }
 
