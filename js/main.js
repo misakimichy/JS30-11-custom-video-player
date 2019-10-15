@@ -9,8 +9,17 @@
 
     const togglePlay = () => {
         video.paused ? video.play() : video.pause();
-    }
+    };
+
+    const updateButton = (e) => {
+        const icon = e.currentTarget.paused ? 'Play' : 'Pause';
+        console.log(icon);
+        toggle.textContent = icon;
+    };
 
     video.addEventListener('click', togglePlay);
+    video.addEventListener('play', updateButton);
+    video.addEventListener('pause', updateButton);
+    
     toggle.addEventListener('click', togglePlay);
 }());
