@@ -41,15 +41,21 @@ body {
 
 .player-button {
     min-width: 80px;
-    margin-right: 10px;
     font-size: 16px;
+    color: white;
     text-align: center;
+    background: none;
+    outline: 0;
+    border: 0;
     cursor: pointer;
-    border-radius: 3px;
 }
 
 .player-button:focus {
     border-color: gray;
+}
+
+label {
+    color: black;
 }
 
 .player-slider {
@@ -62,9 +68,9 @@ body {
     position: absolute;
     bottom: 0;
     display: flex;
+    flex-wrap: wrap;
     transform: translateY(100%) translateY(-5px);
     transition: all 300ms;
-    flex-wrap: wrap;
     background: rgba(0, 0, 0, 0.1);
 }
 
@@ -76,6 +82,10 @@ body {
     height: 15px;
 }
 
+.player-controls > * {
+    flex: 1;
+}
+
 .progress {
     height: 10px;
     background: rgba(0, 0, 0, 0.5);
@@ -84,6 +94,7 @@ body {
     flex-basis: 100%;
     position: relative;
     transition: height 300ms;
+    cursor: ew-resize;
 }
 
 .progress-filled {
