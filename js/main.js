@@ -29,6 +29,11 @@
         progressBar.style.flexBasis = `${percent}%`;
     };
 
+    const scrub = (e) => {
+        const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+        video.currentTime = scrubTime;
+    };
+
     // Event listeners
     video.addEventListener('click', togglePlay);
     video.addEventListener('play', updateButton);
@@ -39,4 +44,11 @@
     skipButtons.forEach(skipButton => skipButton.addEventListener('click', skip));
     ranges.forEach(range => range.addEventListener('change', handleSliders));
     ranges.forEach(range => range.addEventListener('mousemove', handleSliders));
+
+    let mouseDown = false;
+    progress.addEventListener('click', scrub);
+    progress.addEventListener('mousemove', (e) => mouseDown && scrub(e));
+    progress.addEventListener('mousedown', () => mouseDown = true);
+    progress.addEventListener('mouseup', () => mouseDown = false);
+
 }());
