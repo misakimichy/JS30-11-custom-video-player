@@ -50,5 +50,4 @@
     progress.addEventListener('mousemove', (e) => mouseDown && scrub(e));
     progress.addEventListener('mousedown', () => mouseDown = true);
     progress.addEventListener('mouseup', () => mouseDown = false);
-
 }());
