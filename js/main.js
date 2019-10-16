@@ -12,7 +12,7 @@
     };
 
     const updateButton = (e) => {
-        const icon = e.currentTarget.paused ? 'Play' : 'Pause';
+        const icon = e.currentTarget.paused ? '►' : '❚❚';
         toggle.textContent = icon;
     };
 
